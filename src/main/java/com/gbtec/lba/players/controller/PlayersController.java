@@ -21,23 +21,13 @@ public class PlayersController {
 
 	/**
 	 * <p>
-	 * Homepage.
-	 * </p>
-	 */
-	@GetMapping(value = "/")
-	public String home() {
-		return "redirect:/players";
-	}
-
-	/**
-	 * <p>
 	 * Full list of players.
 	 * </p>
 	 * 
 	 * @param model
 	 * @return
 	 */
-	@GetMapping(value = "/players")
+	@GetMapping(value = "/list")
 	public String init(@ModelAttribute("model") ModelMap model) {
 		model.addAttribute("playersList", playerService.findAll());
 		return "index";

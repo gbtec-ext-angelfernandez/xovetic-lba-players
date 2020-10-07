@@ -30,6 +30,14 @@ spring:
       multipart:
         enabled: true
 
+eureka:
+  client:
+    enabled: true
+    serviceUrl:
+      defaultZone: http://eureka:1111/eureka/
+  instance:
+    leaseRenewalIntervalInSeconds: 5   # DO NOT DO THIS IN PRODUCTION
+
 
 logging:
   file: ${java.io.tmpdir}/${spring.application.name}.log
